@@ -4,19 +4,23 @@ on:
 
 name: Publish to crates.io
 
-steps:
-    - uses: actions/checkout@v2
-    - uses: actions-rs/toolchain@v1
-      with:
+jobs:
+  publish:
+    name: Publish crates
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions-rs/toolchain@v1
+        with:
           toolchain: stable
           override: true
-    - uses: katyo/publish-crates@v1
-      name: Publish trial-lib
-      with:
+      - uses: katyo/publish-crates@v1
+        name: Publish trial-lib
+        with:
           path: './trial-lib' 
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
-    - uses: katyo/publish-crates@v1
-      name: Publish trial-runner
-      with:
+      - uses: katyo/publish-crates@v1
+        name: Publish trial-runner
+        with:
           path: './trial-runner' 
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
