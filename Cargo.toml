@@ -1,10 +1,5 @@
-[package]
-name = "trial-run"
-version = "0.1.0"
-edition = "2021"
-description = "Trialing a release process"
-license = "Apache-2.0"
-authors = ["Devdutt Shenoi <devdutt@outlook.in>"]
-repository = "https://github.com/de-sh/trial-run/"
-
-[dependencies]
+[workspace]
+members = [
+    "trial-lib",
+    "trial-runner"
+]

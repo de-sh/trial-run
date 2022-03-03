@@ -3,5 +3,12 @@
 version = 3
 
 [[package]]
-name = "trial-run"
+name = "trial-lib"
 version = "0.1.0"
+
+[[package]]
+name = "trial-runner"
+version = "0.1.0"
+dependencies = [
+ "trial-lib",
+]

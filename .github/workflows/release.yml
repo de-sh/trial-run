@@ -11,12 +11,12 @@ steps:
           toolchain: stable
           override: true
     - uses: katyo/publish-crates@v1
-      name: Publish rumqttc
+      name: Publish trial-lib
       with:
-          path: './rumqttc' 
+          path: './trial-lib' 
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
     - uses: katyo/publish-crates@v1
-      name: Publish rumqttd
+      name: Publish trial-runner
       with:
-          path: './rumqttd' 
+          path: './trial-runner' 
           registry-token: ${{ secrets.CARGO_REGISTRY_TOKEN }}
